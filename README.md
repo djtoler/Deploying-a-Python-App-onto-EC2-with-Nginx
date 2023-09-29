@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 # Deployment 4
 
 <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/cpu1.PNG"></p>
@@ -17,4 +16,4 @@
 <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/t2_details.PNG"></p>
 <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/working_nginx.PNG"></p>
 <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/dp4.svg"></p>
->>>>>>> main
+
