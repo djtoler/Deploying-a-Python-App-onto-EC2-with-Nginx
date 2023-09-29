@@ -1,5 +1,15 @@
 # Deployment 4
-<p align="center">
-<img src="">
-</p>
-
+<p align="center"><img src="./cpu1.PNG"></p>
+<p align="center"><img src="./cpu_from_sysstat.PNG"></p>
+<p align="center"><img src="./cpu_from_sysstat_during_build.PNG"></p>
+<p align="center"><img src="./cpu_system.PNG"></p>
+<p align="center"><img src="./cpu_user.PNG"></p>
+<p align="center"><img src="./cw_alarm_set_up.PNG"></p>
+<p align="center"><img src="./cw_setup.PNG"></p>
+<p align="center"><img src="./disk_io.PNG"></p>
+<p align="center"><img src="./dp4error.PNG"></p>
+<p align="center"><img src="./jenkins_dev_build_4.PNG"></p>
+<p align="center"><img src="./nginx_landingpage.PNG"></p>
+<p align="center"><img src="./n_working_nginx.PNG"></p>
+<p align="center"><img src="./t2_details.PNG"></p>
+<p align="center"><img src="./working_nginx.PNG"></p>
