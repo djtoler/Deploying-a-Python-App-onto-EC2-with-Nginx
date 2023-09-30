@@ -78,7 +78,8 @@ location / {
   >  Update iam role
   > ```
 * > #### [Download CloudWatch Agent](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/download_cloudwatch_agent.sh)
-* > #### Configure Your CloudWatch Alarm  
+* > #### Configure Your CloudWatch Alarm
+* > #### Push some code to GitHub then go back to the CloudWatch dashboard to see the results
 
 ___
 
