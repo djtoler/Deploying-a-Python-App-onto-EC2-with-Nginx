@@ -9,7 +9,7 @@ ___
 
 # Problems
 #### 1) EC2 went down and couldn’t get back in
-> <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/dp4error.PNG"></p>
+<p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/dp4error.PNG"></p>
 
 > ##### After installing and configuring all of the tools to run our application, the ec2 instance disconnected and wouldn’t accept any other attempts at reconnecting. We tried refreshing, restarting, checking security groups, using ssh, using an endpoint… The instance was terminated and we launched a new one. This worked and we were able to finish deploying our application 
 
