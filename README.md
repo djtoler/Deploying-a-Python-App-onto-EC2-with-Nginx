@@ -20,9 +20,10 @@
 > <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/n_working_nginx.PNG"></p>
 
 > #### We configured our Nginx server to listen on port 5000 but never allowed incoming traffic on that port in our security group. We edited our inbound traffic rules to accept all TCP traffic on port 5000 and the our application was available.
-> > | Before Opening Port 5000            | After Opening Port 5000                |
+> | Before Opening Port 5000            | After Opening Port 5000                |
 > | ----------------------------------- | ----------------------------------- |
 > | ![aaaaaa.png](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/n_working_nginx.PNG) | ![aaaaaa.png](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/working_nginx.PNG) |
+
 
 ### CloudWatch CPU monitoring data not granular enough
 > #### After running our Jenkins build while CloudWatch is monitoring our CPU utilization we didn’t see the kind of impact that was expected. There were data points on the CloudWatch line graph that did show a spike but the fastest monitoring interval CloudWatch has available is 60 seconds.
