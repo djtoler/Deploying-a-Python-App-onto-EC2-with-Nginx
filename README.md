@@ -41,7 +41,7 @@ ___
 ___
 
 # Steps
-### We run this set of scripts to download the tools to run our application
+### We execute this set of scripts to download the tools to run our application
 * ####  [Install Jenkins](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_jenkins.sh)
 * ####  [Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)
 * ####  [Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)
