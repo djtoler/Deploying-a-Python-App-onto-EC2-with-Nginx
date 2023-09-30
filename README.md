@@ -38,6 +38,7 @@ ___
 
 > #### We find out that during our Jenkins build, our CPU actually hit a critical level of 89%. This is good information to know because depending on what else may be running on our machine during our future Jenkins builds, we could slow down deployment time or break something critical.
 
+___
 
 # Steps
 ### We run this set of scripts to download the tools to run our application
@@ -45,10 +46,10 @@ ___
 * ####  [Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)
 * ####  [Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)
 * ####  [Install Nginx](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_nginx.sh)
-> ##### After running the scipt, format your URL like this --> `http://<YOUR-IP-ADDRESS>:<PORT-NUMBER>` and enter it into the browser. You should see this...
+* ##### After running the scipt, format your URL like this --> `http://<YOUR-IP-ADDRESS>:<PORT-NUMBER>` and enter it into the browser. You should see this...
 > <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG" width="75%"></p>
 
-> ##### Open the Nginx config file using this command and replace it with the text below `nano /etc/nginx/sites-enabled/default`
+* ##### Open the Nginx config file using this command and replace it with the text below `nano /etc/nginx/sites-enabled/default`
 ```
 ###First change the port from 80 to 5000, see below:
 server {
@@ -65,7 +66,7 @@ location / {
 }
 
 ```
-* > #### [Create IAM Role for CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html)
+* #### [Create IAM Role for CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html)
 * #### Attach Your IAM Role using the steps below
 > ```
   >  Go to EC2 console
@@ -79,8 +80,11 @@ location / {
 * > #### [Download CloudWatch Agent](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/download_cloudwatch_agent.sh)
 * > #### Configure Your CloudWatch Alarm  
 
+___
+
 ## System Diagram
 <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/dp4.svg"></p>
+
 ## Optimization
 
 
