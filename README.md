@@ -47,7 +47,7 @@ ___
 * ####  [Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)
 * ####  [Install Nginx](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_nginx.sh)
 * ##### After running the scipt, format your URL like this --> `http://<YOUR-IP-ADDRESS>:<PORT-NUMBER>` and enter it into the browser. You should see this...
-> <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG" width="75%"></p>
+> <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG" width="65%"></p>
 
 * ##### Open the Nginx config file using this command and replace it with the text below `nano /etc/nginx/sites-enabled/default`
 ```
