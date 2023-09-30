@@ -36,8 +36,6 @@
 > #### Using the bash command `iostat -xz 5` now we can see our CPU utilization at every 5 second interval during that same time period CloudWatch was monitoring and reporting. 
 > #### We run another build.
 > #### We find out that during our Jenkins build, our CPU actually hit a critical level of 89%. This is good information to know because depending on what else may be running on our machine during our future Jenkins builds, we could slow down deployment time or break something critical.
-> <mark>CPU Utilization Before Jenkins Build</mark>
-> <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/cpubefore.png" width="75%"></p>
 > <mark>CPU Utilization During Build</mark>
 > <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/cpuduring.png" width="75%""></p>
 
