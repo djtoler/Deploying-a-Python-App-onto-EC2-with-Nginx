@@ -34,20 +34,21 @@ ___
 > ##### Using the bash command `iostat -xz 5` now we can see our CPU utilization at every 5 second interval during that same time period CloudWatch was monitoring and reporting. 
 > ##### We run another build.
 > <mark>CPU Utilization During Build</mark>
-> <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/cpuduring.png" width="75%""></p>
+> <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/cpuduring.png" width="75%"></p>
 
 > #### We find out that during our Jenkins build, our CPU actually hit a critical level of 89%. This is good information to know because depending on what else may be running on our machine during our future Jenkins builds, we could slow down deployment time or break something critical.
 
 
 # Steps
 ### We run this set of scripts to download the tools to run our application
-* > ####  [Install Jenkins](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_jenkins.sh)
-* > ####  [Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)
-* > ####  [Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)
-* > ####  [Install Nginx](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_nginx.sh)
-* > ##### After running the scipt, format your URL like this --> `http://<YOUR-IP-ADDRESS>:<PORT-NUMBER>` and enter it into the browser. You should see this...
-* > <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG"></p>
-* > ##### Open the Nginx config file using this command and replace it with the text below `nano /etc/nginx/sites-enabled/default`
+* ####  [Install Jenkins](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_jenkins.sh)
+* ####  [Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)
+* ####  [Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)
+* ####  [Install Nginx](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_nginx.sh)
+> ##### After running the scipt, format your URL like this --> `http://<YOUR-IP-ADDRESS>:<PORT-NUMBER>` and enter it into the browser. You should see this...
+> <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG" width="75%"></p>
+
+> ##### Open the Nginx config file using this command and replace it with the text below `nano /etc/nginx/sites-enabled/default`
 ```
 ###First change the port from 80 to 5000, see below:
 server {
@@ -65,8 +66,8 @@ location / {
 
 ```
 * > #### [Create IAM Role for CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html)
-* > #### Attach Your IAM Role
-* > ```
+* #### Attach Your IAM Role using the steps below
+> ```
   >  Go to EC2 console
   > Select instance
   >  Click actions
@@ -84,19 +85,8 @@ location / {
 
 
 
-<p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/cpu1.PNG"></p>
 
 
-
-<p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/cw_alarm_set_up.PNG"></p>
-<p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/cw_setup.PNG"></p>
-<p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/disk_io.PNG"></p>
-
-<p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG"></p>
-<p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/t2_details.PNG"></p>
-
-
-https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG
 
 
 
