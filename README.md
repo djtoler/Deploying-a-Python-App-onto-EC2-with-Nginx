@@ -95,10 +95,10 @@ location / {
   > Select iam roles from dropdown
   > Update iam role
   > ```
-* > #### 9. [Download CloudWatch Agent](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/download_cloudwatch_agent.sh)
-* > #### 10. Configure Your CloudWatch Alarm
-* > #### 11. Update the current Jenkinsfile to this new [Jenkinsfile](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/Jenkinsfile)
-* > #### 12. Merge the dev and main branches & trigger a new Jenkins build by pushing the updated code to GitHub.
+* #### 9. [Download CloudWatch Agent](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/download_cloudwatch_agent.sh)
+* #### 10. Configure Your CloudWatch Alarm
+* #### 11. Update the current Jenkinsfile to this new [Jenkinsfile](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/Jenkinsfile)
+* #### 12. Merge the dev and main branches & trigger a new Jenkins build by pushing the updated code to GitHub.
 
 ___
 
@@ -106,9 +106,6 @@ ___
 <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/dp4.svg"></p>
 
 ## Optimization
-
-
-
 
 
 
