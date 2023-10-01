@@ -33,7 +33,7 @@ ___
 > ##### _That means the data we get from CloudWatch wouldn’t accurately represent a critical metric we’re monitoring because it’s only reporting where that metric is exactly at every 60 second interval._
 > ##### _Using the bash command `iostat -xz 5` now we can see our CPU utilization at every 5 second interval during that same time period CloudWatch was monitoring and reporting_
 > ##### _We run another build._
-> <mark>CPU Utilization During Build</mark>
+> <mark>CPU Utilization During Jenkins Build</mark>
 > <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/cpuduring.png" width="75%"></p>
 
 > #### _We find out that during our Jenkins build, our CPU actually hit a critical level of 89%. This is good information to know because depending on what else may be running on our machine during our future Jenkins builds, we could slow down deployment time or break something critical._
@@ -62,7 +62,7 @@ Connect to our EC2 instance using "EC2 Instance Connect" or "SSH"
 ### Step 3) Install & Configure Our Tools
 * ##### Execute this set of scripts to download the tools to run our application
 * #####  1. _[Install Jenkins](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_jenkins.sh)_
-* ####  2. _[Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)_
+* #####  2. _[Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)_
 * #####  3. _[Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)_
 * #####  4. _[Install Nginx](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_nginx.sh)_
 * ##### 5. _Open the Nginx config file using this command and replace it with the text below `nano /etc/nginx/sites-enabled/default`_
@@ -82,23 +82,23 @@ location / {
 }
 ```
 * ##### 6. _After running the scipt, format your URL like this --> `http://<YOUR--PUBLIC-IP-ADDRESS>:5000` and enter it into the browser. You should see this..._
-> <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG" width="45%"></p>
+> <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG" width="50%"></p>
 
-* #### 7. _[Create IAM Role for CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html)_
-* #### 8. _Attach Your IAM Role using the steps below_
+* ##### 7. _[Create IAM Role for CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html)_
+* ##### 8. _Attach Your IAM Role using the steps below_
 > ```
   > Go to EC2 console
   > Select instance
   > Click actions
   > Click security
-  > Click modify iam role
-  > Select iam roles from dropdown
-  > Update iam role
+  > Click modify IAM role
+  > Select IAM roles from dropdown
+  > Update IAM role
   > ```
-* #### 9. _[Download CloudWatch Agent](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/download_cloudwatch_agent.sh)_
-* #### 10. _Configure Your CloudWatch Alarm_
-* #### 11. _Update the current Jenkinsfile to this new [Jenkinsfile](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/Jenkinsfile)_
-* #### 12. _Merge the dev and main branches & trigger a new Jenkins build by pushing the updated code to GitHub._
+* ##### 9. _[Download CloudWatch Agent](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/download_cloudwatch_agent.sh)_
+* ##### 10. _Configure Your CloudWatch Alarm_
+* ##### 11. _Update the current Jenkinsfile to this new [Jenkinsfile](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/Jenkinsfile)_
+* ##### 12. _Merge the dev and main branches & trigger a new Jenkins build by pushing the updated code to GitHub._
 
 ___
 
