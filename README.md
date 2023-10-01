@@ -87,7 +87,7 @@ location / {
   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 }
 ```
-* ##### 6. _After running the scipt, format your URL like this --> `http://<YOUR--PUBLIC-IP-ADDRESS>:5000` and enter it into the browser. You should see this..._
+* ##### 6. _After running the scipt, format your URL like this --> `http://<YOUR--PUBLIC-IP-ADDRESS>:8000` and enter it into the browser. You should see this..._
 > <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG" width="50%"></p>
 
 * ##### 7. _[Create IAM Role for CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html)_
