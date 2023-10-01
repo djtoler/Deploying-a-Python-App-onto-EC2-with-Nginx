@@ -23,7 +23,8 @@ ___
 > | ![aaaaaa.png](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/n_working_nginx.PNG) | ![aaaaaa.png](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/working_nginx.PNG) |
 >
 > # Update(10/1/23):
-> ## The approach above was wrong. Nginx is functioning as the reverse proxy at port 8000. Nginx needs to be restarted before the changes made to the config file will take effect. This way, theres no need to edit our instance's security group to accept traffic on port 5000. Use `sudo systemctl restart nginx` to restart Nginx, re-edit the security group rules and remove port 5000.
+> ## The approach above was wrong. Nginx is functioning as the reverse proxy at port 8000. Nginx needs to be restarted before the changes made to the config file will take effect.
+> This way, theres no need to edit our instance's security group to accept traffic on port 5000. Use `sudo systemctl restart nginx` to restart Nginx, re-edit the security group rules and remove port 5000. The gif below shows our app working on port 8000
 > 
 > ![Alt Text](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/ezgif.com-gif-maker.gif)
 
