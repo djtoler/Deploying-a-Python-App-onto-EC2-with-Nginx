@@ -41,35 +41,51 @@ ___
 ___
 
 # Steps
-* ### Build Our Infrastructure
-* ### Download Our Application Files
-* ### Install and Configure Our Tools
-* #### We execute this set of scripts to download the tools to run our application
-* ####  [Install Jenkins](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_jenkins.sh)
-* ####  [Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)
-* ####  [Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)
-* ####  [Install Nginx](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_nginx.sh)
-* ##### Open the Nginx config file using this command and replace it with the text below `nano /etc/nginx/sites-enabled/default`
+> ### Step 1) Build Our Infrastructure
 ```
-###First change the port from 80 to 5000, see below:
+Create a VPC
+Create a Public Subnet inside of our VPC
+Attach a Internet Gateway to our VPC
+Attach a Route Table to our Public Subnet
+Create a t2-medium EC2 instance inside the Public Subnet of our VPC
+Generate access keys for SSH connection
+Enabled public IP address to be assigned
+Create a Security Group that allows incoming traffic on ports 80, 8080, 8000, 22 & 5000
+Launch our EC2 instance
+Connect to our EC2 instance using "EC2 Instance Connect" or "SSH"
+```
+
+> ### Step 2) Download Our Application Files & Create Branch
+* #### [Download App Files](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/github_repo_create.sh)
+* #### Create a new branch in our repo called "dev" by running: `git checkout dev`
+
+> ### Step 3) Install & Configure Our Tools
+* #### We execute this set of scripts to download the tools to run our application
+* ####  1. [Install Jenkins](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_jenkins.sh)
+* ####  2. [Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)
+* ####  3. [Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)
+* ####  4. [Install Nginx](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_nginx.sh)
+* ##### 5. Open the Nginx config file using this command and replace it with the text below `nano /etc/nginx/sites-enabled/default`
+```
+#First change the port from 80 to 5000, see below:
 
 server {
   listen 5000 default_server;
   listen [::]:5000 default_server;
 
-####Now scroll down to where you see “location” and replace it with the text below:
+# Now scroll down to where you see “location” and replace it with the text below:
 
 location / {
   proxy_pass http://127.0.0.1:8000;
   proxy_set_header Host $host;
   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 }
-
 ```
-* ##### After running the scipt, format your URL like this --> `http://<YOUR--PUBLIC-IP-ADDRESS>:5000` and enter it into the browser. You should see this...
+* ##### 6. After running the scipt, format your URL like this --> `http://<YOUR--PUBLIC-IP-ADDRESS>:5000` and enter it into the browser. You should see this...
 > <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG" width="45%"></p>
-* #### [Create IAM Role for CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html)
-* #### Attach Your IAM Role using the steps below
+
+* #### 7. [Create IAM Role for CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html)
+* #### 8. Attach Your IAM Role using the steps below
 > ```
   > Go to EC2 console
   > Select instance
@@ -79,9 +95,10 @@ location / {
   > Select iam roles from dropdown
   > Update iam role
   > ```
-* > #### [Download CloudWatch Agent](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/download_cloudwatch_agent.sh)
-* > #### Configure Your CloudWatch Alarm
-* > #### Push some code to GitHub then go back to the CloudWatch dashboard to see the results
+* > #### 9. [Download CloudWatch Agent](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/download_cloudwatch_agent.sh)
+* > #### 10. Configure Your CloudWatch Alarm
+* > #### 11. Update the current Jenkinsfile to this new [Jenkinsfile](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/Jenkinsfile)
+* > #### 12. Merge the dev and main branches & trigger a new Jenkins build by pushing the updated code to GitHub.
 
 ___
 
@@ -89,6 +106,8 @@ ___
 <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/dp4.svg"></p>
 
 ## Optimization
+
+
 
 
 
