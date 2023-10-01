@@ -15,12 +15,15 @@ ___
 
 #### 2) GitHub merge issues
 
-#### 3) Couldn’t connect to URL shortener application 
+#### 3) Couldn’t connect to URL shortener application(9/28/23)
 > ##### _We configured our Nginx server to listen on port 5000 but never allowed incoming traffic on that port in our security group. We edited our inbound traffic rules to accept all TCP traffic on port 5000 and the our application was available._
 
 > | Before Opening Port 5000                  | After Opening Port 5000               |
 > | ----------------------------------- | ----------------------------------- |
 > | ![aaaaaa.png](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/n_working_nginx.PNG) | ![aaaaaa.png](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/working_nginx.PNG) |
+>
+> # Update(10/1/23):
+> ## The approach above was wrong. Nginx is functioning as the reverse proxy at port 8000. Nginx needs to be restarted before the changes made to the config file will take effect. This way, theres no need to edit our instance's security group to accept traffic on port 5000. Use `sudo systemctl restart nginx` to restart Nginx, re-edit the security group rules and remove port 5000.
 
 #### 4) CloudWatch CPU monitoring data not granular enough
 > #### _After running our Jenkins build while CloudWatch is monitoring our CPU utilization we didn’t see the kind of impact that was expected. There were data points on the CloudWatch line graph that did show a spike but the fastest monitoring interval CloudWatch has available is 60 seconds._
