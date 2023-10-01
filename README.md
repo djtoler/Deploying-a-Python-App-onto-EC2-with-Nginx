@@ -69,13 +69,13 @@ location / {
 * #### [Create IAM Role for CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html)
 * #### Attach Your IAM Role using the steps below
 > ```
-  >  Go to EC2 console
+  > Go to EC2 console
   > Select instance
-  >  Click actions
+  > Click actions
   > Click security
-  >  Click modify iam role
-  >  Select iam roles from dropdown
-  >  Update iam role
+  > Click modify iam role
+  > Select iam roles from dropdown
+  > Update iam role
   > ```
 * > #### [Download CloudWatch Agent](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/download_cloudwatch_agent.sh)
 * > #### Configure Your CloudWatch Alarm
