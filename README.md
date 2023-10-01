@@ -111,7 +111,7 @@ location / {
 ___
 
 ## System Diagram
-<p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/dp4.svg"></p>
+<p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/dp4_updated.drawio.svg"></p>
 
 ## Optimization
 
