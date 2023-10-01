@@ -97,8 +97,9 @@ location / {
   > ```
 * ##### 9. _[Download CloudWatch Agent](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/download_cloudwatch_agent.sh)_
 * ##### 10. _Configure Your CloudWatch Alarm_
-* ##### 11. _Update the current Jenkinsfile to this new [Jenkinsfile](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/Jenkinsfile)_
-* ##### 12. _Merge the dev and main branches & trigger a new Jenkins build by pushing the updated code to GitHub._
+* ##### 11. _Switch to the 'dev' branch_ in GitHub by running this command: `git switch dev`
+* ##### 12. _Update the current Jenkinsfile to this new [Jenkinsfile](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/Jenkinsfile)_
+* ##### 13. _Merge the dev and main branches & trigger a new Jenkins build by pushing the updated code to GitHub._
 
 ___
 
