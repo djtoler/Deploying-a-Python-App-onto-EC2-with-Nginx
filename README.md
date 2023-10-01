@@ -57,10 +57,10 @@ Connect to our EC2 instance using "EC2 Instance Connect" or "SSH"
 
 ### Step 2) Download Our Application Files & Create Branch
 * ##### _[Download App Files](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/github_repo_create.sh)_
-* #### _Create a new branch in our repo called "dev" by running: `git checkout dev`_
+* ##### _Create a new branch in our repo called "dev" by running: `git checkout dev`_
 
 ### Step 3) Install & Configure Our Tools
-* ##### Execute this set of scripts to download the tools to run our application
+* ##### Run this set of scripts to download the tools to run our application
 * #####  1. _[Install Jenkins](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_jenkins.sh)_
 * #####  2. _[Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)_
 * #####  3. _[Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)_
