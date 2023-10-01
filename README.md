@@ -41,23 +41,23 @@ ___
 ___
 
 # Steps
-### We execute this set of scripts to download the tools to run our application
+* ### Build Our Infrastructure
+* ### Download Our Application Files
+* ### Install and Configure Our Tools
+* #### We execute this set of scripts to download the tools to run our application
 * ####  [Install Jenkins](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_jenkins.sh)
 * ####  [Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)
 * ####  [Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)
 * ####  [Install Nginx](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_nginx.sh)
-* ##### After running the scipt, format your URL like this --> `http://<YOUR-IP-ADDRESS>:<PORT-NUMBER>` and enter it into the browser. You should see this...
-> <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG" width="65%"></p>
-
 * ##### Open the Nginx config file using this command and replace it with the text below `nano /etc/nginx/sites-enabled/default`
 ```
 ###First change the port from 80 to 5000, see below:
+
 server {
   listen 5000 default_server;
   listen [::]:5000 default_server;
 
-####Now scroll down to where you see “location” and replace it
-with the text below:
+####Now scroll down to where you see “location” and replace it with the text below:
 
 location / {
   proxy_pass http://127.0.0.1:8000;
@@ -66,6 +66,8 @@ location / {
 }
 
 ```
+* ##### After running the scipt, format your URL like this --> `http://<YOUR--PUBLIC-IP-ADDRESS>:5000` and enter it into the browser. You should see this...
+> <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG" width="45%"></p>
 * #### [Create IAM Role for CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html)
 * #### Attach Your IAM Role using the steps below
 > ```
