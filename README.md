@@ -15,7 +15,7 @@ ___
 > ##### _After installing and configuring all of the tools to run our application, the ec2 instance disconnected and wouldn’t accept any other attempts at reconnecting. We tried refreshing, restarting, checking security groups, using ssh, using an endpoint… The instance was terminated and we launched a new one. This worked and we were able to finish deploying our application_ 
 
 #### 2) GitHub merge issues
-> ##### _We had a lot of issues with merging the Jenkinsfile from dev branch to main branch. Found a command to use to get our branches in sync. `git cherry-pick [commit-hash] will take any commit you've made on any branch applit it to the branch you're currently working in._
+> ##### _We had a lot of issues with merging the Jenkinsfile from dev branch to main branch. Found a command to use to get our branches in sync. `git cherry-pick [commit-hash]` will take any commit you've made on any branch applit it to the branch you're currently working in._
 > ##### _These are the last git commands used that got our Jenkins file updated and matching in our dev and main branches_
 
 ```
