@@ -45,6 +45,10 @@ ___
 
 > #### _We find out that during our Jenkins build, our CPU actually hit a critical level of 89%. This is good information to know because depending on what else may be running on our machine during our future Jenkins builds, we could slow down deployment time or break something critical._
 
+> ## _🚨Update(10/2/23)🚨_
+> ### CloudWatch actually can give us the data we're looking for. We just have to configure the alarms the right way. When creating the alarm we can choose intervals as low as 10 second. We can also choose to have the highest point our CPU utilization reached within that interval.
+
+> <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/Screenshot%202023-10-02%20at%2010.52.46%20AM.png" width="50%"></p>
 ___
 
 # Steps
