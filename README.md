@@ -15,6 +15,26 @@ ___
 > ##### _After installing and configuring all of the tools to run our application, the ec2 instance disconnected and wouldn’t accept any other attempts at reconnecting. We tried refreshing, restarting, checking security groups, using ssh, using an endpoint… The instance was terminated and we launched a new one. This worked and we were able to finish deploying our application_ 
 
 #### 2) GitHub merge issues
+> ##### _We had a lot of issues with merging the Jenkinsfile from dev branch to main branch. Found a command to use to get our branches in sync. `git cherry-pick [commit-hash] will take any commit you've made on any branch applit it to the branch you're currently working in._
+> ##### _These are the last git commands used that got our Jenkins file updated and matching in our dev and main branches_
+> ```263  git checkout dev
+  264  git log
+  265  git checkout main
+  266  git cherry-pick 8a7b52482fadb6f664dacbcf86bb812a28ae0536
+  267  nano Jenkinsfile
+  268  git add Jenkinsfile
+  269  git cherry-pick --continue
+  270  git push origin main
+  271  cat Jenkinsfile
+  272  git checkout dev
+  273  cp Jenkinsfile Jenkinsfile.bak
+  274  git checkout main
+  275  cp Jenkinsfile.bak Jenkinsfile
+  276  git add Jenkinsfile
+  277  git commit -m "Restored Jenkinsfile from dev branch"
+  278  git push origin main ```
+
+> ##### Inside our target branch, we basically override the current Jenkinsfile with a backup of the Jenkinsfile from the dev branch and pushed it to the main branch.
 
 #### 3) Couldn’t connect to URL shortener application(9/28/23)
 > ##### _We configured our Nginx server to listen on port 5000 but never allowed incoming traffic on that port in our security group. We edited our inbound traffic rules to accept all TCP traffic on port 5000 and the our application was available._
@@ -61,7 +81,7 @@ Attach a Route Table to our Public Subnet
 Create a t2-medium EC2 instance inside the Public Subnet of our VPC
 Generate access keys for SSH connection
 Enabled public IP address to be assigned
-Create a Security Group that allows incoming traffic on ports 80, 8080, 8000, 22 & 5000
+Create a Security Group that allows incoming traffic on ports 80, 8080, 8000, 22 
 Launch our EC2 instance
 Connect to our EC2 instance using "EC2 Instance Connect" or "SSH"
 ```
@@ -119,6 +139,10 @@ ___
 <p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/dp4_updated.drawio.svg"></p>
 
 ## Optimization
+
+* #### Get a better handle on GitHub merging, commiting and conflict resolving.
+* #### Use a userdata script for our EC2 instance to have all of our tools installed during its launch
+* #### Since we are moving away from managed infastructure, automate deploying our infastructure with code and managing it with alarms, notifications & automated responses
 
 
 
