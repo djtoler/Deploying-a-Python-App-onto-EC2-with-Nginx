@@ -143,6 +143,7 @@ ___
 
 ## Optimization
 
+* #### Configure our GitHub by editing the config file
 * #### Get a better handle on GitHub merging, commiting and conflict resolving.
 * #### Use a userdata script for our EC2 instance to have all of our tools installed during its launch
 * #### Since we are moving away from managed infastructure, automate deploying our infastructure with code and managing it with alarms, notifications & automated responses
