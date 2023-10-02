@@ -66,7 +66,7 @@ Launch our EC2 instance
 Connect to our EC2 instance using "EC2 Instance Connect" or "SSH"
 ```
 
-### Step 2) Download Our Application Files & Create Branch
+### Step 2) Download Our Application Files & Create An Additional Branch In GitHub Repo
 * ##### _[Download App Files](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/github_repo_create.sh)_
 * ##### _Create a new branch in our repo called "dev" by running: `git checkout dev`_
 
