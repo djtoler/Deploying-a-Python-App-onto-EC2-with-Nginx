@@ -17,7 +17,9 @@ ___
 #### 2) GitHub merge issues
 > ##### _We had a lot of issues with merging the Jenkinsfile from dev branch to main branch. Found a command to use to get our branches in sync. `git cherry-pick [commit-hash] will take any commit you've made on any branch applit it to the branch you're currently working in._
 > ##### _These are the last git commands used that got our Jenkins file updated and matching in our dev and main branches_
-> ```263  git checkout dev
+
+```
+  263  git checkout dev
   264  git log
   265  git checkout main
   266  git cherry-pick 8a7b52482fadb6f664dacbcf86bb812a28ae0536
@@ -32,7 +34,8 @@ ___
   275  cp Jenkinsfile.bak Jenkinsfile
   276  git add Jenkinsfile
   277  git commit -m "Restored Jenkinsfile from dev branch"
-  278  git push origin main ```
+  278  git push origin main
+```
 
 > ##### Inside our target branch, we basically override the current Jenkinsfile with a backup of the Jenkinsfile from the dev branch and pushed it to the main branch.
 
