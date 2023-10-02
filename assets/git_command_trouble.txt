@@ -1,0 +1,118 @@
+git branch
+  162  ls
+  163  nano Jenkinsfile 
+  164  git add .
+  165  git commit -m'removed Jenkins file'
+  166  git push -u origin main
+  167  git checkout dev
+  168  nano Jenkinsfile 
+  169  git add .
+  170  git commit -m'removed Jenkins file from dev'
+  171  git push -u origin dev
+  172  nano Jenkinsfile 
+  173  git branch
+  174  git checkout main
+  175  git add .
+  176  git commit -m're wrote Jenkins file'
+  177  git push -u origin dev
+  178  git checkout main
+  179  git pull origin main
+  180  git merge dev
+  181  git push origin main
+  182  git pull -u origin dev
+  183  git pull
+  184  ls
+  185  nano Jenkinsfile 
+  186  git merge dev
+  187  git add .
+  188  git commit -m'merging again'
+  189  git push
+  190  nano J
+  191  nano Jenkinsfile 
+  192  git add .
+  193  git checkout dev
+  194  git pull origin dev
+  195  git branch
+  196  git checkout main
+  197  git branch
+  198  git push origin main
+  199  git log main
+  200  git push origin main
+  201  git branch
+  202  git push
+  203  ls
+  204  nano Jenkinsfile 
+  205  git checkout main
+  206  git log
+  207  git reset --hard 3d40b1704f145012fcf9b36179a83c41754c5c41
+  208  git checkout dev
+  209  git pull origin dev
+  210  git checkout main
+  211  git pull origin main
+  212  git merge dev
+  213  git push origin main
+  214  git branch
+  215  git push
+  216  ls
+  217  nano Jenkinsfile 
+  218  git checkout dev
+  219  nano Jenkinsfile 
+  220  git checkout main
+  221  git fetch origin
+  222  git checkout main
+  223  git merge dev
+  224  cat Jenkinsfile
+  225  git diff main..dev -- Jenkinsfile
+  226  git checkout dev
+  227  cat Jenkinsfile 
+  228  [200~git diff main..dev -- Jenkinsfile
+  229  ~git diff main..dev -- Jenkinsfile
+  230  git diff main..dev -- Jenkinsfile
+  231  git checkout main
+  232  git merge dev
+  233  git checkout dev
+  234  git add .
+  235  it commit -m'check to see if dev has been pushed'
+  236  git commit -m'check to see if dev has been pushed'
+  237  it git push origin dev
+  238  git push origin dev
+  239  git checkout main
+  240  git merge dev
+  241  git push origin main
+  242  git branch
+  243  cat Jenkinsfile 
+  244  git log --oneline | head
+  245  git checkout main
+  246  git checkout dev
+  247  git log --oneline | head
+  248  cat Jenkinsfile
+  249  git branch
+  250  git checkout main
+  251  cat Jenkinsfile
+  252  git fetch origin
+  253  git checkout dev
+  254  git checkout -b temp_branch
+  255  git rebase main
+  256  git checkout main
+  257  git merge temp_branch
+  258  cat Jenkinsfile
+  259  git checkout dev
+  260  git pull origin dev
+  261  git checkout main
+  262  git pull origin main
+  263  git checkout dev
+  264  git log
+  265  git checkout main
+  266  git cherry-pick 8a7b52482fadb6f664dacbcf86bb812a28ae0536
+  267  nano Jenkinsfile
+  268  git add Jenkinsfile
+  269  git cherry-pick --continue
+  270  git push origin main
+  271  cat Jenkinsfile
+  272  git checkout dev
+  273  cp Jenkinsfile Jenkinsfile.bak
+  274  git checkout main
+  275  cp Jenkinsfile.bak Jenkinsfile
+  276  git add Jenkinsfile
+  277  git commit -m "Restored Jenkinsfile from dev branch"
+  278  git push origin main
