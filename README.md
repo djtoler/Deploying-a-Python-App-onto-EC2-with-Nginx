@@ -91,20 +91,19 @@ Connect to our EC2 instance using "EC2 Instance Connect" or "SSH"
 ```
 
 ### Step 2) Download Our Application Files & Create An Additional Branch In GitHub Repo
-#### _In this step we create an additional branch in GitHub. This feature will give us the flexibility we need to modify our current code and test new versions in isolated enviornments._ 
-#### _In our context, the benifit of using GitHub branches is that it will protect our production enviornment from being introduced to errors that can degrade or crash our application's services.... which is exactly [what happened when we deployed URL Shortener v3.1](https://github.com/djtoler/dp3-1)._
-* ##### 1. _[Download Application Files From GitHub](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/github_repo_create.sh)_
-* ##### 2. _Create a new branch in our repo called "dev" by running: `git checkout dev`_
+* #### _In this step we create an additional branch in GitHub. This feature will give us the flexibility we need to modify our current code and test new versions in isolated enviornments. In our context, the benifit of using GitHub branches is that it will protect our production enviornment from being introduced to errors that can degrade or crash our application's services, which is exactly [what happened when we deployed URL Shortener v3.1](https://github.com/djtoler/dp3-1)._
+* * ##### 1. _[Download Application Files From GitHub](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/github_repo_create.sh)_
+* * ##### 2. _Create a new branch in our repo called "dev" by running: `git checkout dev`_
 
 ### Step 3) Install & Configure Tools To Run Our Application
-#### _In this deployment, we move away from running our application on a managed service (AWS Elastic Beanstalk) to using Nginx with Gunicorn. We configured Nginx to function as a reverse proxy, accepting application requests at port 5000 and routing them to port 8000. This will give our application an additioinal layer of protection from unwanted external requests. Overall we'll keep some of the infrastructure flexibility of Beanstalk but gain more control in how we implement that flexibility at the cost of having it actuall configure and implement it ourselves._
+* #### _In this deployment, we move away from running our application on a managed service (AWS Elastic Beanstalk) to using Nginx with Gunicorn. We configured Nginx to function as a reverse proxy, accepting application requests at port 5000 and routing them to port 8000. This will give our application an additioinal layer of protection from unwanted external requests. Overall we'll keep some of the infrastructure flexibility of Beanstalk but gain more control in how we implement that flexibility at the cost of having it actuall configure and implement it ourselves._
 ##### Run this set of scripts to download the tools to run our application
-*  #####  1. _[Install Jenkins](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_jenkins.sh)_
-*  #####  2. _[Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)_
-*  #####  3. _[Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)_
-*  #####  4. _[Install Nginx](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_nginx.sh)... Format your URL like this --> `http://<YOUR--PUBLIC-IP-ADDRESS>:80` and enter it into the browser. You should see this..._
+* *  #####  1. _[Install Jenkins](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_jenkins.sh)_
+* *  #####  2. _[Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)_
+* *  #####  3. _[Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)_
+* *  #####  4. _[Install Nginx](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_nginx.sh)... Format your URL like this --> `http://<YOUR--PUBLIC-IP-ADDRESS>:80` and enter it into the browser. You should see this..._
 > <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG" width="50%"></p>_
-* #####  5. _Open the Nginx config file using this command and replace it with the text below `nano /etc/nginx/sites-enabled/default`_
+* * #####  5. _Open the Nginx config file using this command and replace it with the text below `nano /etc/nginx/sites-enabled/default`_
 ```
 #First change the port from 80 to 5000, see below:
 
@@ -120,11 +119,11 @@ location / {
   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 }
 ```
-* ##### 6. _Use `sudo systemctl restart nginx` to restart Nginx, then format your URL like this --> `http://<YOUR--PUBLIC-IP-ADDRESS>:8000` and enter it into the browser. You should see this..._
+* * ##### 6. _Use `sudo systemctl restart nginx` to restart Nginx, then format your URL like this --> `http://<YOUR--PUBLIC-IP-ADDRESS>:8000` and enter it into the browser. You should see this..._
 > <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/8000_working.png "width="50%"></p>
 
-* ##### 7. _[Create IAM Role for CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html)_
-* ##### 8. _Attach Your IAM Role using the steps below_
+* * ##### 7. _[Create IAM Role for CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent.html)_
+* * ##### 8. _Attach Your IAM Role using the steps below_
 > ```
   > Go to EC2 console
   > Select instance
@@ -134,11 +133,11 @@ location / {
   > Select IAM roles from dropdown
   > Update IAM role
   > ```
-* ##### 9. _[Download CloudWatch Agent](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/download_cloudwatch_agent.sh)_
-* ##### 10. _Configure Your CloudWatch Alarm_
-* ##### 11. _Switch to the 'dev' branch_ in GitHub by running this command: `git switch dev`
-* ##### 12. _Update the current Jenkinsfile to this new [Jenkinsfile](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/Jenkinsfile)_
-* ##### 13. _Merge the dev and main branches & trigger a new Jenkins build by pushing the updated code to GitHub._
+* * ##### 9. _[Download CloudWatch Agent](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/download_cloudwatch_agent.sh)_
+* * ##### 10. _Configure Your CloudWatch Alarm_
+* * ##### 11. _Switch to the 'dev' branch_ in GitHub by running this command: `git switch dev`
+* * ##### 12. _Update the current Jenkinsfile to this new [Jenkinsfile](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/Jenkinsfile)_
+* * ##### 13. _Merge the dev and main branches & trigger a new Jenkins build by pushing the updated code to GitHub._
 
 ___
 
