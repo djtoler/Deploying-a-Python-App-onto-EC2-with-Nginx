@@ -138,8 +138,13 @@ location / {
 
 ___
 
+## Questions
+* #### How is the server performing? _During the multi-branch pipeline run, the servers CPU spiked up to 89% utilization._
+* #### Can the server handle everything installed on it? if yes, how would a T.2 micro handle in this deployment? _The server did handle everything installed on it. If we had used a t2.mirco, our CPU utilization would have went higher and it would have reached those high utilization percentages faster Memory also spiked considerably with the t2.medium and it would have spiked even more using a t2.micro. Both memory and utilization spiking would cause performance issuse which could impact our applications availability._
+* #### What happens to the CPU when you run another build? _CPU utilization and memory utilization would both spike._
+___
 ## System Diagram
-<p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/dp4_updated.drawio.svg"></p>
+<p align="center"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/dp4_updated3.drawio.svg"></p>
 
 ## Optimization
 
