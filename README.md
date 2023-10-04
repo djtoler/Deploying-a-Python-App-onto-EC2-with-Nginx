@@ -76,6 +76,7 @@ ___
 
 # Steps
 ### Step 1) Build Our Infrastructure
+* #### _In this deployment, we move away from the default infastructre AWS provides and build our own. This gives us more control over important aspects of our system design like regulating ingress and egress traffic. This can reduce our costs by protecting our resources from potential unauthorized use/abuse... Or cost optimizing our system components by isolating them and analyzing each one individually._
 ```
 Create a VPC
 Create a Public Subnet inside of our VPC
@@ -90,15 +91,16 @@ Connect to our EC2 instance using "EC2 Instance Connect" or "SSH"
 ```
 
 ### Step 2) Download Our Application Files & Create An Additional Branch In GitHub Repo
-* ##### _[Download App Files](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/github_repo_create.sh)_
-* ##### _Create a new branch in our repo called "dev" by running: `git checkout dev`_
+* #### _In this step we create an additional branch in GitHub. This feature will give us the flexibility we need to modify our current code and test new versions in isolated enviornments. In our context, the benifit of using GitHub branches is that it will protect our production enviornment from being introduced to errors that can degrade or crash our application's services, which is exactly [what happened when we deployed URL Shortener v3.1](https://github.com/djtoler/dp3-1)._
+> ##### _[Download App Files](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/github_repo_create.sh)_
+> ##### _Create a new branch in our repo called "dev" by running: `git checkout dev`_
 
 ### Step 3) Install & Configure Our Tools
-* ##### Run this set of scripts to download the tools to run our application
-* #####  1. _[Install Jenkins](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_jenkins.sh)_
-* #####  2. _[Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)_
-* #####  3. _[Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)_
-* #####  4. _[Install Nginx](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_nginx.sh)... Format your URL like this --> `http://<YOUR--PUBLIC-IP-ADDRESS>:80` and enter it into the browser. You should see this..._
+> ##### Run this set of scripts to download the tools to run our application
+> #####  1. _[Install Jenkins](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_jenkins.sh)_
+> #####  2. _[Install Python 10](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_python10.sh)_
+> #####  3. _[Install Pip](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_pip.sh)_
+> #####  4. _[Install Nginx](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/install_nginx.sh)... Format your URL like this --> `http://<YOUR--PUBLIC-IP-ADDRESS>:80` and enter it into the browser. You should see this..._
 > <p align="left"><img src="https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/assets/nginx_landingpage.PNG" width="50%"></p>_
 * ##### 5. _Open the Nginx config file using this command and replace it with the text below `nano /etc/nginx/sites-enabled/default`_
 ```
