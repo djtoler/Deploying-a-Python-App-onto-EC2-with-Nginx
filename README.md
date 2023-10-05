@@ -91,7 +91,10 @@ Connect to our EC2 instance using "EC2 Instance Connect" or "SSH"
 ```
 
 ### Step 2) Download Our Application Files & Create An Additional Branch In GitHub Repo
-* #### _In this step we create an additional branch in GitHub. This feature will give us the flexibility we need to modify our current code and test new versions in isolated enviornments. In our context, the benifit of using GitHub branches is that it will protect our production enviornment from being introduced to errors that can degrade or crash our application's services, which is exactly [what happened when we deployed URL Shortener v3.1](https://github.com/djtoler/dp3-1)._
+* #### _In this step we create an additional branch in GitHub._
+* #### _This feature will give us the flexibility we need to modify our current code and test new versions in isolated enviornments._
+  
+* #### _In our context, the benifit of using GitHub branches is that it will protect our production enviornment from being introduced to errors that can degrade or crash our application's services, which is exactly [what happened when we deployed URL Shortener v3.1](https://github.com/djtoler/dp3-1)._
 * * ##### 1. _[Download Application Files From GitHub](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/github_repo_create.sh)_
 * * ##### 2. _Create a new branch in our repo called "dev" by running: `git checkout dev`_
 
