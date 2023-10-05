@@ -95,8 +95,8 @@ Connect to our EC2 instance using "EC2 Instance Connect" or "SSH"
 * #### _This feature will give us the flexibility we need to modify our current code and test new versions in isolated enviornments._
   
 * #### _In our context, the benifit of using GitHub branches is that it will protect our production enviornment from being introduced to errors that can degrade or crash our application's services, which is exactly [what happened when we deployed URL Shortener v3.1](https://github.com/djtoler/dp3-1)._
-* * ##### 1. _[Download Application Files From GitHub](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/github_repo_create.sh)_
-* * ##### 2. _Create a new branch in our repo called "dev" by running: `git checkout dev`_
+   * ##### 1. _[Download Application Files From GitHub](https://github.com/djtoler/Deployment4___Nginx_Jenkins/blob/main/scripts/github_repo_create.sh)_
+   * ##### 2. _Create a new branch in our repo called "dev" by running: `git checkout dev`_
 
 ### Step 3) Install & Configure Tools To Run Our Application
 * #### _In this deployment, we move away from running our application on a managed service (AWS Elastic Beanstalk) to using Nginx with Gunicorn. We configured Nginx to function as a reverse proxy, accepting application requests at port 5000 and routing them to port 8000. This will give our application an additioinal layer of protection from unwanted external requests. Overall we'll keep some of the infrastructure flexibility of Beanstalk but gain more control in how we implement that flexibility at the cost of having it actuall configure and implement it ourselves._
