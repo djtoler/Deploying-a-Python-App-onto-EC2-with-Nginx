@@ -76,7 +76,9 @@ ___
 
 # Steps
 ### Step 1) Build Our Infrastructure
-* #### _In this deployment, we move away from the default infastructre AWS provides and build our own. This gives us more control over important aspects of our system design like regulating ingress and egress traffic. This can reduce our costs by protecting our resources from potential unauthorized use/abuse... Or cost optimizing our system components by isolating them and analyzing each one individually._
+* #### _In this deployment, we move away from the default infastructre AWS provides and build our own.
+* #### This gives us more control over important aspects of our sysptem design like regulating ingress and egress traffic. This can reduce our costs by protecting our resources from potential unauthorized use/abuse...
+* #### Or optimizing the cost of our system components by isolating them and analyzing each one individually._
 ```
 Create a VPC
 Create a Public Subnet inside of our VPC
